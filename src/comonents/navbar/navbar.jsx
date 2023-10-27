@@ -26,9 +26,9 @@ const Navbar = () => {
   };
   const { pathname } = useLocation();
 
-  const isLoggedin = false;
+  const isLoggedin = true;
   return (
-    <div className={Active  ? "navbar active" : "navbar"}>
+    <div className={Active ? "navbar active" : "navbar"}>
       <div className="container">
         <div className="logo">
           <span
@@ -64,12 +64,12 @@ const Navbar = () => {
                 Prebuilt Designs
               </span>
               <span
-              onClick={() => {
-                window.location.href = "./#img-generation";
-              }}
-            >
-              Design Enhancement
-            </span>
+                onClick={() => {
+                  window.location.href = "./#img-generation";
+                }}
+              >
+                Design Enhancement
+              </span>
               {!isLoggedin && (
                 <span
                   onClick={() => {
@@ -79,24 +79,40 @@ const Navbar = () => {
                   Log In
                 </span>
               )}
-             
-            </div>
-            {isLoggedin && (<div
-              className="pp"
-              onClick={() => {
-                optionbar();
-              }}
-            >
-              <img src="img/ana.jpg" />
-              <span>{currentUser?.username}</span>
-              {Open && (
-                <div className="options">
-                  <span>Profile</span>
-                  <span>Your Designs</span>
-                  <span>Log Out</span>
-                </div>
+              {!isLoggedin && (
+                <span
+                  onClick={() => {
+                    window.location.href = "/register";
+                  }}
+                >
+                  Register
+                </span>
               )}
-            </div>)}
+            </div>
+            {isLoggedin && (
+              <div
+                className="pp"
+                onClick={() => {
+                  optionbar();
+                }}
+              >
+                <img src="img/ana.jpg" />
+                <span>{currentUser?.username}</span>
+                {Open && (
+                  <div className="options">
+                    <span
+                      onClick={() => {
+                        window.location.href = "/profile";
+                      }}
+                    >
+                      Profile
+                    </span>
+                    <span>Your Designs</span>
+                    <span>Log Out</span>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </div>

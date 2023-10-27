@@ -23,6 +23,7 @@ export const gigs = [
     desc: "Mountains, Hills, flora",
     
     username: "Anna Bell",
+    state: true,
   },
   {
     id: 2,
@@ -31,6 +32,7 @@ export const gigs = [
     desc: "computer, keyboard, Woman",
     
     username: "Lannie Coleman",
+    state: true,
   },
   {
     id: 3,
@@ -39,6 +41,7 @@ export const gigs = [
     desc: "squirrel, eating",
      
     username: "Carol Steve",
+    state: true,
   },
   {
     id: 4,
@@ -47,6 +50,7 @@ export const gigs = [
     desc: "beach , sea , rainbow",
     
     username: "Don Weber",
+    state: false,
   },
   {
     id: 5,
@@ -55,6 +59,7 @@ export const gigs = [
     desc: "writing, clipboard",
     
     username: "Audrey Richards",
+    state: false,
   },
   {
     id: 6,
@@ -63,6 +68,7 @@ export const gigs = [
     desc: "deer, forest, yellow",
     
     username: "Walton Shepard ",
+    state: true,
   },
   {
     id: 7,
@@ -71,6 +77,7 @@ export const gigs = [
     desc: "stars, cosmos, purple",
     
     username: "Waverly Schaefer",
+    state: false,
   },
   {
     id: 8,
@@ -79,6 +86,7 @@ export const gigs = [
     desc: "lorem, ipsum, dipsum",
     
     username: "Wilton Hunt",
+    state: true,
   },
 ];
 

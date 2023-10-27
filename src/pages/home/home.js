@@ -92,7 +92,7 @@ const Home = () => {
             </p>
             <div className="button">
               <button
-                
+                onClick={()=>{window.location.href ="/imgchnage"}}
               >
                 Sketch to <i>img</i>
               </button>

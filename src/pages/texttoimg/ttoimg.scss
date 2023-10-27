@@ -10,8 +10,8 @@
     align-items: center;
     color: white;
     background-color: #556695;
-    margin-bottom: 20px;
-    width: 880px;
+    margin-bottom: 15px;
+    width: 60%;
     border-radius: 10px;
   }
   .container {
@@ -112,6 +112,11 @@
           height: 70px;
         }
         textarea::placeholder {
+          padding: 5px;
+          font-size: 17px;
+          color: white;
+        }
+        textarea::input {
           padding: 5px;
           font-size: 17px;
           color: white;

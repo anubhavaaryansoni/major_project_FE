@@ -6,6 +6,10 @@ import Ttoimg from "./pages/texttoimg/ttoimg";
 import  Login  from "./login/login";
 import Prebuilt from "./comonents/prebuilt/prebuilt";
 import { Img } from "./comonents/prebuilt/gigcard/gigcard";
+import Register from "./pages/registration/registration";
+import Imgc from "./pages/imgchanges/imgc";
+import Forgotpass from "./pages/forgotpassword/forgotpass";
+import Profile from "./pages/profile/profile";
 function App() {
   const Layout = () => {
     return (
@@ -37,11 +41,27 @@ function App() {
           path: "/image",
           element: <Img />,
         },
+        {
+          path: "/imgchnage",
+          element: <Imgc />,
+        },
+        {
+          path: "/profile",
+          element: <Profile />,
+        },
       ],
     },
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/register",
+      element: <Register />,
+    },
+    {
+      path: "/recovery",
+      element: <Forgotpass />,
     },
   ]);
   return <RouterProvider router={router} />;

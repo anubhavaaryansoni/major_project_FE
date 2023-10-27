@@ -3,6 +3,7 @@ import "../gigcard/gigcard.scss";
 import save from "../gigcard/save-instagram.png";
 import saved from "../gigcard/bookmark.png";
 import { useState  } from "react";
+// import {ana} from "../../../../bg-01.jpg"
 // const theme = useContext(ThemeContext);
 // let feature_ = -1
 export const Img =({item})=>{
@@ -11,7 +12,7 @@ export const Img =({item})=>{
     </div>
 }
 const Gigcard = ({ item }) => {
-    const [isSaved, setsaved] = useState(false);
+    const [isSaved, setsaved] = useState(item.state);
     const [initial,setInitial] =useState("initial");
     const handleclick=()=>{
         
@@ -27,7 +28,7 @@ const Gigcard = ({ item }) => {
         {!isSaved ? (
           <img
             onClick={() => {
-              setsaved(true);
+              setsaved(!isSaved);
             }}
             src={save}
             alt=""

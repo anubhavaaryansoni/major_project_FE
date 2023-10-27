@@ -1,4 +1,4 @@
-.login {
+.register {
   display: flex;
   // flex-direction: column;
   align-items: center;
@@ -40,14 +40,12 @@ background-color:#556695 ;
       flex-direction: column;
       justify-content: center;
       // align-items: center;
-      gap: 15px;
+      gap: 17px;
       font-size: 25px;
       padding: 25px;
       // gap: 40px;
       // border: none;
-      border-radius: 10px;img{
-        width:80px;
-      }
+      border-radius: 10px;
       input {
         border: none;
         border-bottom: 1px solid black;
@@ -67,33 +65,12 @@ background-color:#556695 ;
         height: 25px;
         padding: 3px;
       }
-      .recover{
-        cursor: pointer;
-      }
-      .recover:hover{
-        transform: scale(1.1);
-      }
+
       p {
         font-size: 17px;
         margin-left: 280px;
       }
-      .ima {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 10px;
-
-        .x {
-          width: 35px;
-          //   height: 85%;
-        }
-        img {
-          width: 40px;
-        }
-        img:hover {
-          transform: scale(1.2);
-        }
-      }
+      
       button {
         border: none;
         border-radius: 17px;
@@ -104,12 +81,12 @@ background-color:#556695 ;
         // align-items: center;
         padding: 3px;
         // justify-content:flex-start;
-        height: 37px;
+        height: 12rem;
         width: 90%;
         // width: 30%;
         margin-top: 17px;
         // margin-left: 135px;
-        background-image: url("../../bg-01.jpg");
+        background-image: url("../../../bg-01.jpg");
         // background-color:#556695;
         // background-color: whitesmoke;
         color: white;
