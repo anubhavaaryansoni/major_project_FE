@@ -65,7 +65,7 @@ const Navbar = () => {
               </span>
               <span
                 onClick={() => {
-                  window.location.href = "./#img-generation";
+                  window.location.href = "./imgchnage";
                 }}
               >
                 Design Enhancement
@@ -107,7 +107,13 @@ const Navbar = () => {
                     >
                       Profile
                     </span>
-                    <span>Your Designs</span>
+                    <span
+                      onClick={() => {
+                        window.location.href = "/saved";
+                      }}
+                    >
+                      Saved
+                    </span>
                     <span>Log Out</span>
                   </div>
                 )}

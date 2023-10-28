@@ -16,7 +16,7 @@ const Home = () => {
           <div className="search">
             <div className="searchinput">
               <img src="img/search.png" alt=""></img>
-              <input type="text" placeholder="'Discover a new realm '"></input>
+              <input type="search" placeholder="'Discover a new realm '"></input>
             </div>
             <button>Search</button>
           </div>

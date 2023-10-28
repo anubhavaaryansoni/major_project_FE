@@ -10,6 +10,8 @@ import Register from "./pages/registration/registration";
 import Imgc from "./pages/imgchanges/imgc";
 import Forgotpass from "./pages/forgotpassword/forgotpass";
 import Profile from "./pages/profile/profile";
+import EditProfile from "./pages/editprofile/editprofile";
+import Saved from "./pages/saved/saved";
 function App() {
   const Layout = () => {
     return (
@@ -48,6 +50,14 @@ function App() {
         {
           path: "/profile",
           element: <Profile />,
+        },
+        {
+          path: "/editprofile",
+          element: <EditProfile />,
+        },
+        {
+          path: "/saved",
+          element: <Saved />,
         },
       ],
     },
