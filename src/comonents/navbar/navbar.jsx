@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 const Navbar = () => {
   const currentUser = {
     id: 1,
-    username: "Ana",
+    username: "",
   };
   const [Open, setOpen] = useState(false);
   const [Active, setActive] = useState(false);

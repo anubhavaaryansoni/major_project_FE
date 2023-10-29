@@ -16,7 +16,7 @@ const Saved = () => {
           <div className="ppname">
             <img src="img/ana.jpg"></img>
             <div className=" nameetc">
-              <h3>Ana</h3>
+              <h3></h3>
               <label className="link">
                 <img src={lame} />
                 <h5>LINK</h5>
