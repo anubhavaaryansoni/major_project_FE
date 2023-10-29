@@ -45,14 +45,17 @@
 
 // export default Ttoimg;
 
-
 import React, { useState } from "react";
 import "./ttoimg.scss";
 import menu from "./menu.png";
+import del_ from"./close_6318592.png"
+import newimage from "./images.jpg";
 
 const Ttoimg = () => {
-  const [imageSrc, setImageSrc] = useState(null); // State to store the image source
+  const [imageSrc, setImageSrc] = useState( newimage ); // State to store the image source
 
+  const [showOverlay, setShowOverlay] = useState(true);
+  
   const generateImage = async () => {
     // Your API endpoint for image generation
     const apiUrl = "http://127.0.0.1:5000/dashboard/textToImg";
@@ -67,7 +70,7 @@ const Ttoimg = () => {
       const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
-          "Authorization": `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ text: descriptionPrompt }),
@@ -77,12 +80,17 @@ const Ttoimg = () => {
         const responseData = await response.json();
         // Set the image source based on the response
         setImageSrc(responseData.image_url);
+        setShowOverlay(true);
       } else {
         // Handle the error here
       }
     } catch (error) {
       // Handle any network or other errors here
     }
+  };
+  const closeOverlay = () => {
+    // Hide the overlay
+    setShowOverlay(false);
   };
 
   return (
@@ -103,7 +111,7 @@ const Ttoimg = () => {
 
         <div className="prompt">
           <div className="img">
-            <img src={menu} alt="menu" />
+            <img onClick = {()=>{window.location.href = "/imgchnage"}}src={menu} alt="menu" />
           </div>
           <div className="desc-prompt">
             <label>Description prompt</label>
@@ -115,14 +123,27 @@ const Ttoimg = () => {
           </div>
         </div>
         <button onClick={generateImage}>Generate</button>
-        {imageSrc && (
-          <div className="generated-image">
-            <img src={imageSrc} alt="Generated Image" />
+        {showOverlay && (
+          <div className="image-overlay" >
+            <div className="generated-image">
+              <img  className="close" src={del_} onClick={closeOverlay}/>
+              <img src={imageSrc} alt="Generated Image" />
+              <button>Save</button>
+            </div>
           </div>
         )}
       </div>
-    </div>
+     
+      </div>
   );
 };
 
 export default Ttoimg;
+// <div className="image-section">
+// {imageSrc && (
+//   <div className="generated-image">
+//     <img src={imageSrc} alt="Generated Image" />
+//     <button>Save Image</button>
+//   </div>
+// )}
+// </div>

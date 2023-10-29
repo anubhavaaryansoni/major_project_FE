@@ -45,11 +45,13 @@
 import React, { useState } from 'react';
 import '../imgchanges/imgc.scss';
 import menu from '../texttoimg/menu.png';
+import del_ from "../texttoimg/close_6318592.png"
+import cat from "../texttoimg/images.jpg"
 
 const Imgc = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [generatedImage, setGeneratedImage] = useState(null);
-
+  const [generatedImage, setGeneratedImage] = useState(cat);
+  const [showOverlay, setShowOverlay] = useState(true);
   const handleImageUpload = (event) => {
     const file = event.target.files[0]; // Get the selected file
     setSelectedImage(file); // Store the file itself, not the URL
@@ -80,12 +82,17 @@ const Imgc = () => {
       if (response.ok) {
         const responseData = await response.json();
         setGeneratedImage(responseData.image_url);
+        setShowOverlay(true);
       } else {
         console.error('Image enhancement request failed:', response);
       }
     } catch (error) {
       console.error('Error:', error);
     }
+  };
+  const closeOverlay = () => {
+    // Hide the overlay
+    setShowOverlay(false);
   };
 
   const handleImageToSketch = async () => {
@@ -112,6 +119,7 @@ const Imgc = () => {
       if (response.ok) {
         const responseData = await response.json();
         setGeneratedImage(responseData.image_url);
+        setShowOverlay(true);
       } else {
         console.error('Image to sketch request failed:', response);
       }
@@ -153,15 +161,25 @@ const Imgc = () => {
           <button onClick={handleImageEnhancement}>Image Enhancement</button>
           <button onClick={handleImageToSketch}>Image to Sketch</button>
         </div>
-        {generatedImage && (
-          <div className="generated-image-container">
-            <p>Generated Image:</p>
-            <img src={generatedImage} alt="Generated Image" />
+        {showOverlay && (
+          <div className="image-overlay" >
+            <div className="generated-image">
+              <img  className="close" src={del_} onClick={closeOverlay}/>
+              <img src={generatedImage} alt="Generated Image" />
+              <button>Save</button>
+            </div>
           </div>
         )}
+        
       </div>
     </div>
   );
 };
 
 export default Imgc;
+// {generatedImage && (
+//   <div className="generated-image-container">
+//     <p>Generated Image:</p>
+//     <img src={generatedImage} alt="Generated Image" />
+//   </div>
+// )}
